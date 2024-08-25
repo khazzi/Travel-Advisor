@@ -84,9 +84,11 @@ const App = () => {
     }
   };
 
+  console.log("Google Maps API Key: ", process.env.REACT_APP_GOOGLE_MAP_API_KEY);
+
   return (
     <>
-      <LoadScript googleMapsApiKey="AIzaSyBuQbVSuNxxFP7MFndF5IlcmRnHP_moDpI" libraries={libraries}>
+      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAP_API_KEY} libraries={libraries}>
         <CssBaseline />
         <Header onPlaceChanged={onPlaceChanged} onLoad={onLoad} />
         <Grid container spacing={3} style={{ width: '100%' }}>
